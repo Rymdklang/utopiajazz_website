@@ -17,16 +17,16 @@
   <style>
     :root {
       --cream: #F1F0EA;
-      --navy: #0F2133;
-      --red: #8F1918;
+      --navy: #12273E;
+      --red: #991C1F;
     }
 
     html,
     body {
       margin: 0;
       padding: 0;
-      background-color: var(--cream);
-      color: var(--navy);
+      background-color: var(--navy);
+      color: var(--cream);
       font-family: 'Barlow Condensed', 'Bahnschrift', sans-serif;
     }
 
@@ -38,8 +38,8 @@
       transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .stage-row:hover {
-      background-color: var(--navy);
-      color: var(--cream);
+      background-color: var(--cream);
+      color: var(--navy);
       padding-left: 1rem;
     }
     .stage-row:hover .row-arrow {
@@ -52,18 +52,18 @@
     }
   </style>
 </head>
-<body class="min-h-screen w-full flex flex-col justify-between selection:bg-[#8F1918] selection:text-[#F1F0EA]">
+<body class="min-h-screen w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F1F0EA]">
 
-  <!-- STILREN YTTRE AFFISCHRAM I MENYNS EXAKTA FÄRGER -->
-  <div class="flex-1 flex flex-col justify-between m-3 sm:m-6 md:m-8 border-[3px] border-[#0F2133] bg-[#F1F0EA]">
+  <!-- STILREN YTTRE AFFISCHRAM I MÖRKBLÅ (#12273E), KRÄMVIT (#F1F0EA) & RÖD (#991C1F) -->
+  <div class="flex-1 flex flex-col justify-between m-3 sm:m-6 md:m-8 border-[3px] border-[#F1F0EA] bg-[#12273E]">
 
     <!-- TOPPRAD: ADRESS & SOCIALA LÄNKAR -->
-    <header class="px-4 sm:px-8 py-4 border-b-[2px] border-[#0F2133] flex flex-wrap items-center justify-between gap-3 text-sm sm:text-base tracking-[0.08em] uppercase font-semibold">
+    <header class="px-4 sm:px-8 py-4 border-b-[2px] border-[#F1F0EA] flex flex-wrap items-center justify-between gap-3 text-sm sm:text-base tracking-[0.08em] uppercase font-semibold">
       <a
         href="https://maps.google.com/?q=Karl+Johansgatan+6,+Göteborg"
         target="_blank"
         rel="noreferrer"
-        class="hover:text-[#8F1918] transition-colors"
+        class="hover:text-[#991C1F] transition-colors"
       >
         KARL JOHANSGATAN 6, GÖTEBORG
       </a>
@@ -73,7 +73,7 @@
           href="https://www.instagram.com/utopiajazzgbg/"
           target="_blank"
           rel="noreferrer"
-          class="hover:text-[#8F1918] transition-colors"
+          class="hover:text-[#991C1F] transition-colors"
         >
           INSTAGRAM ↗
         </a>
@@ -81,26 +81,36 @@
           href="https://www.facebook.com/utopiajazzgbg/?locale=sv_SE"
           target="_blank"
           rel="noreferrer"
-          class="hover:text-[#8F1918] transition-colors"
+          class="hover:text-[#991C1F] transition-colors"
         >
           FACEBOOK ↗
         </a>
       </nav>
     </header>
 
-    <!-- MITTENDEL: REN LOGOTYP MED GENERÖS LUFT -->
+    <!-- MITTENDEL: RÖD LOGOTYP (#991C1F) MOT MÖRKBLÅ BAKGRUND -->
     <section class="flex-1 min-h-[260px] sm:min-h-[340px] px-4 sm:px-8 py-12 flex items-center justify-center">
-      <!-- Logotyp i originalfärg utan filter eller mask -->
+      <!-- Din lokala logotypfil (byt till ./utopiajazzlogosmall_2.png eller ersätt filen i ditt repo) -->
       <img
         src="./utopiajazzlogosmall.png"
         alt="Utopia Jazz"
+        onerror="this.style.display='none'; document.getElementById('red-logo-preview').style.display='flex';"
         class="w-60 sm:w-72 md:w-80 h-auto object-contain select-none rotate-90"
       />
+      <!-- Förhandsvisning i exakt #991C1F -->
+      <div id="red-logo-preview" style="display: none;" class="items-center justify-center">
+        <svg viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-56 sm:w-64 md:w-72 h-auto select-none" aria-label="Utopia Jazz">
+          <g fill="#991C1F" font-family="'Oswald', Impact, sans-serif" font-weight="700" letter-spacing="-2">
+            <text x="16" y="210" font-size="144">UTOPIA</text>
+            <text x="95" y="362" font-size="138" transform="rotate(-1.5 210 340)">JAZZ</text>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <!-- NEDRE DEL: TRE AVSKALADE HUVUDLÄNKAR + SIDFOT -->
-    <div class="border-t-[3px] border-[#0F2133]">
-      <main class="divide-y-[2px] divide-[#0F2133]">
+    <div class="border-t-[3px] border-[#F1F0EA]">
+      <main class="divide-y-[2px] divide-[#F1F0EA]">
         <!-- 01. PROGRAM -->
         <a
           href="https://billetto.se/users/utopia-jazz"
@@ -111,7 +121,7 @@
           <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
             PROGRAM
           </span>
-          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#8F1918] shrink-0">
+          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#991C1F] shrink-0">
             ↗
           </span>
         </a>
@@ -126,7 +136,7 @@
           <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
             BOKA BORD
           </span>
-          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#8F1918] shrink-0">
+          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#991C1F] shrink-0">
             ↗
           </span>
         </a>
@@ -141,31 +151,31 @@
           <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
             MENY
           </span>
-          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#8F1918] shrink-0">
+          <span class="row-arrow font-display text-2xl sm:text-4xl font-bold text-[#991C1F] shrink-0">
             ↗
           </span>
         </a>
       </main>
 
       <!-- SIDFOT: ÖPPETTIDER & KONTAKT -->
-      <footer class="border-t-[3px] border-[#0F2133] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm sm:text-base font-medium tracking-[0.05em] uppercase">
+      <footer class="border-t-[3px] border-[#F1F0EA] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm sm:text-base font-medium tracking-[0.05em] uppercase">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span class="font-display text-[#8F1918] font-bold tracking-[0.08em]">ÖPPET</span>
+          <span class="font-display text-[#991C1F] font-bold tracking-[0.08em]">ÖPPET</span>
           <span>TIS–TOR 17–23</span>
           <span>/</span>
           <span>FRE–LÖR 16–01</span>
         </div>
 
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <a href="tel:+46768941124" class="hover:text-[#8F1918] transition-colors">
+          <a href="tel:+46768941124" class="hover:text-[#991C1F] transition-colors">
             +46 76 894 11 24
           </a>
           <span>•</span>
-          <a href="mailto:info@utopiajazz.com" class="hover:text-[#8F1918] transition-colors">
+          <a href="mailto:info@utopiajazz.com" class="hover:text-[#991C1F] transition-colors">
             INFO@UTOPIAJAZZ.COM
           </a>
           <span>•</span>
-          <a href="mailto:anders@utopiajazz.com" class="hover:text-[#8F1918] transition-colors">
+          <a href="mailto:anders@utopiajazz.com" class="hover:text-[#991C1F] transition-colors">
             BOKA BAND: ANDERS@UTOPIAJAZZ.COM
           </a>
         </div>
