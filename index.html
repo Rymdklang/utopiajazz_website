@@ -16,7 +16,7 @@
 
   <style>
     :root {
-      --cream: #F1F0EA;
+      --cream: #F4F4ED;
       --navy: #12273E;
       --red: #991C1F;
     }
@@ -25,8 +25,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: var(--navy);
-      color: var(--cream);
+      background-color: var(--cream);
+      color: var(--navy);
       font-family: 'Barlow Condensed', 'Bahnschrift', sans-serif;
     }
 
@@ -38,27 +38,45 @@
       transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .stage-row:hover {
-      background-color: var(--cream);
-      color: var(--navy);
+      background-color: var(--navy);
+      color: var(--cream);
       padding-left: 1rem;
     }
     .stage-row:hover .row-arrow {
       transform: translate(4px, -4px);
-      color: var(--red);
+      color: var(--cream);
     }
     .row-arrow {
       display: inline-block;
       transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
     }
+
+    /* Håller proportionerna perfekta när logotypen roteras 90 grader */
+    .logo-stage {
+      width: min(320px, 68vw);
+      height: min(260px, 54vw);
+    }
+    @media (min-width: 640px) {
+      .logo-stage {
+        width: 400px;
+        height: 320px;
+      }
+    }
+    @media (min-width: 768px) {
+      .logo-stage {
+        width: 460px;
+        height: 360px;
+      }
+    }
   </style>
 </head>
-<body class="min-h-screen w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F1F0EA]">
+<body class="min-h-screen w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F4F4ED]">
 
-  <!-- STILREN YTTRE AFFISCHRAM I MÖRKBLÅ (#12273E), KRÄMVIT (#F1F0EA) & RÖD (#991C1F) -->
-  <div class="flex-1 flex flex-col justify-between m-3 sm:m-6 md:m-8 border-[3px] border-[#F1F0EA] bg-[#12273E]">
+  <!-- STILREN YTTRE AFFISCHRAM I BAKGRUND (#F4F4ED), OUTLINE/TEXT (#12273E) & ACCENT (#991C1F) -->
+  <div class="flex-1 flex flex-col justify-between m-3 sm:m-6 md:m-8 border-[3px] border-[#12273E] bg-[#F4F4ED]">
 
     <!-- TOPPRAD: ADRESS & SOCIALA LÄNKAR -->
-    <header class="px-4 sm:px-8 py-4 border-b-[2px] border-[#F1F0EA] flex flex-wrap items-center justify-between gap-3 text-sm sm:text-base tracking-[0.08em] uppercase font-semibold">
+    <header class="px-4 sm:px-8 py-4 border-b-[3px] border-[#12273E] flex flex-wrap items-center justify-between gap-3 text-sm sm:text-base tracking-[0.08em] uppercase font-semibold">
       <a
         href="https://maps.google.com/?q=Karl+Johansgatan+6,+Göteborg"
         target="_blank"
@@ -88,29 +106,43 @@
       </nav>
     </header>
 
-    <!-- MITTENDEL: RÖD LOGOTYP (#991C1F) MOT MÖRKBLÅ BAKGRUND -->
-    <section class="flex-1 min-h-[260px] sm:min-h-[340px] px-4 sm:px-8 py-12 flex items-center justify-center">
-      <!-- Din lokala logotypfil (byt till ./utopiajazzlogosmall_2.png eller ersätt filen i ditt repo) -->
-      <img
-        src="./utopiajazzlogosmall.png"
-        alt="Utopia Jazz"
-        onerror="this.style.display='none'; document.getElementById('red-logo-preview').style.display='flex';"
-        class="w-60 sm:w-72 md:w-80 h-auto object-contain select-none rotate-90"
-      />
-      <!-- Förhandsvisning i exakt #991C1F -->
-      <div id="red-logo-preview" style="display: none;" class="items-center justify-center">
-        <svg viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-56 sm:w-64 md:w-72 h-auto select-none" aria-label="Utopia Jazz">
-          <g fill="#991C1F" font-family="'Oswald', Impact, sans-serif" font-weight="700" letter-spacing="-2">
-            <text x="16" y="210" font-size="144">UTOPIA</text>
-            <text x="95" y="362" font-size="138" transform="rotate(-1.5 210 340)">JAZZ</text>
-          </g>
-        </svg>
+    <!-- MITTENDEL: UTOPIA LOGOTYP INRAMAD I AFFISCHKOMPOSITION -->
+    <section class="flex-1 min-h-[280px] sm:min-h-[360px] px-4 sm:px-8 py-8 sm:py-12 flex items-center justify-center">
+      <div class="relative w-full max-w-3xl flex items-center justify-center py-6 sm:py-8">
+        <!-- Tunna, eleganta registreringslinjer i #12273E & #991C1F som förankrar logotypen i affischen -->
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#12273E] mr-6"></div>
+
+        <div class="logo-stage relative flex items-center justify-center shrink-0">
+          <!-- Din uppladdade röda logotypfil (#991C1F) -->
+          <img
+            src="./utopiajazzlogosmall.png"
+            alt="Utopia Jazz"
+            onerror="this.style.display='none'; document.getElementById('red-logo-preview').style.display='flex';"
+            class="h-[260px] sm:h-[340px] md:h-[400px] w-auto max-w-none object-contain select-none rotate-90"
+          />
+
+          <!-- Vektor-fallback i exakt #991C1F (visas i förhandsvisningen) -->
+          <div id="red-logo-preview" style="display: none;" class="w-full h-full items-center justify-center">
+            <svg viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-[250px] sm:h-[330px] md:h-[390px] w-auto select-none rotate-90" aria-label="Utopia Jazz">
+              <g fill="#991C1F" font-family="'Oswald', Impact, sans-serif" font-weight="700" letter-spacing="-2">
+                <g transform="translate(188, 468) rotate(-90)">
+                  <text x="0" y="0" font-size="148">UTOPIA</text>
+                </g>
+                <g transform="translate(362, 478) rotate(-91.5)">
+                  <text x="0" y="0" font-size="142">JAZZ</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] ml-6"></div>
       </div>
     </section>
 
     <!-- NEDRE DEL: TRE AVSKALADE HUVUDLÄNKAR + SIDFOT -->
-    <div class="border-t-[3px] border-[#F1F0EA]">
-      <main class="divide-y-[2px] divide-[#F1F0EA]">
+    <div class="border-t-[3px] border-[#12273E]">
+      <main class="divide-y-[3px] divide-[#12273E]">
         <!-- 01. PROGRAM -->
         <a
           href="https://billetto.se/users/utopia-jazz"
@@ -158,7 +190,7 @@
       </main>
 
       <!-- SIDFOT: ÖPPETTIDER & KONTAKT -->
-      <footer class="border-t-[3px] border-[#F1F0EA] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm sm:text-base font-medium tracking-[0.05em] uppercase">
+      <footer class="border-t-[3px] border-[#12273E] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm sm:text-base font-medium tracking-[0.05em] uppercase">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span class="font-display text-[#991C1F] font-bold tracking-[0.08em]">ÖPPET</span>
           <span>TIS–TOR 17–23</span>
