@@ -51,32 +51,32 @@
       transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
     }
 
-    /* Håller proportionerna perfekta när logotypen roteras 90 grader */
+    /* Håller proportionerna perfekta när logotypen roteras 90 grader – kompakt för att rymmas utan scroll */
     .logo-stage {
-      width: min(320px, 68vw);
-      height: min(260px, 54vw);
+      width: min(210px, 50vw);
+      height: min(155px, 36vw);
     }
     @media (min-width: 640px) {
       .logo-stage {
-        width: 400px;
-        height: 320px;
+        width: 280px;
+        height: 205px;
       }
     }
     @media (min-width: 768px) {
       .logo-stage {
-        width: 460px;
-        height: 360px;
+        width: 320px;
+        height: 230px;
       }
     }
   </style>
 </head>
-<body class="min-h-screen w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F4F4ED]">
+<body class="h-[100dvh] min-h-0 overflow-hidden w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F4F4ED]">
 
   <!-- STILREN YTTRE AFFISCHRAM I BAKGRUND (#F4F4ED), OUTLINE/TEXT (#12273E) & ACCENT (#991C1F) -->
-  <div class="flex-1 flex flex-col justify-between m-3 sm:m-6 md:m-8 border-[3px] border-[#12273E] bg-[#F4F4ED]">
+  <div class="flex-1 min-h-0 flex flex-col justify-between m-2 sm:m-4 md:m-5 border-[3px] border-[#12273E] bg-[#F4F4ED]">
 
     <!-- TOPPRAD: ADRESS & SOCIALA LÄNKAR -->
-    <header class="px-4 sm:px-8 py-4 border-b-[3px] border-[#12273E] flex flex-wrap items-center justify-between gap-3 text-sm sm:text-base tracking-[0.08em] uppercase font-semibold">
+    <header class="shrink-0 px-3 sm:px-6 py-2 sm:py-2.5 border-b-[3px] border-[#12273E] flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm tracking-[0.08em] uppercase font-semibold">
       <a
         href="https://maps.google.com/?q=Karl+Johansgatan+6,+Göteborg"
         target="_blank"
@@ -86,15 +86,15 @@
         KARL JOHANSGATAN 6, GÖTEBORG
       </a>
 
-      <nav class="flex items-center gap-6 sm:gap-8">
+      <nav class="flex items-center gap-4 sm:gap-6">
         <a
           href="https://www.instagram.com/utopiajazzgbg/"
           target="_blank"
           rel="noreferrer"
-          class="inline-flex items-center gap-1.5 hover:text-[#991C1F] transition-colors"
+          class="inline-flex items-center gap-1 hover:text-[#991C1F] transition-colors"
         >
           <span>INSTAGRAM</span>
-          <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <svg class="w-3 h-3 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
           </svg>
         </a>
@@ -102,10 +102,10 @@
           href="https://www.facebook.com/utopiajazzgbg/?locale=sv_SE"
           target="_blank"
           rel="noreferrer"
-          class="inline-flex items-center gap-1.5 hover:text-[#991C1F] transition-colors"
+          class="inline-flex items-center gap-1 hover:text-[#991C1F] transition-colors"
         >
           <span>FACEBOOK</span>
-          <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <svg class="w-3 h-3 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
           </svg>
         </a>
@@ -113,10 +113,10 @@
     </header>
 
     <!-- MITTENDEL: UTOPIA LOGOTYP INRAMAD I AFFISCHKOMPOSITION -->
-    <section class="flex-1 min-h-[280px] sm:min-h-[360px] px-4 sm:px-8 py-8 sm:py-12 flex items-center justify-center">
-      <div class="relative w-full max-w-3xl flex items-center justify-center py-6 sm:py-8">
+    <section class="flex-1 min-h-0 px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-center overflow-hidden">
+      <div class="relative w-full max-w-3xl flex items-center justify-center">
         <!-- Tunna, eleganta registreringslinjer i #991C1F som förankrar logotypen i affischen -->
-        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] mr-6"></div>
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] mr-5"></div>
 
         <div class="logo-stage relative flex items-center justify-center shrink-0">
           <!-- Din uppladdade röda logotyp (utopiajazzlogosmall.png) -->
@@ -124,7 +124,7 @@
             src="./utopiajazzlogosmall.png"
             alt="Utopia Jazz"
             onerror="this.style.display='none'; document.getElementById('svg-logo-fallback').style.display='flex';"
-            class="h-[250px] sm:h-[330px] md:h-[390px] w-auto max-w-none object-contain select-none rotate-90"
+            class="h-[155px] sm:h-[225px] md:h-[265px] w-auto max-w-none object-contain select-none rotate-90"
           />
 
           <!-- Reserv-vektorlogotyp i #991C1F (visas här i förhandsvisningen) -->
@@ -133,7 +133,7 @@
               viewBox="0 0 420 500"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-[250px] sm:h-[330px] md:h-[390px] w-auto select-none rotate-90"
+              class="h-[155px] sm:h-[225px] md:h-[265px] w-auto select-none rotate-90"
               aria-label="Utopia Jazz"
             >
               <g fill="#991C1F" font-family="'Oswald', Impact, sans-serif" font-weight="700" letter-spacing="-2">
@@ -148,25 +148,25 @@
           </div>
         </div>
 
-        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] ml-6"></div>
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] ml-5"></div>
       </div>
     </section>
 
-    <!-- NEDRE DEL: TRE AVSKALADE HUVUDLÄNKAR + SIDFOT -->
-    <div class="border-t-[3px] border-[#12273E]">
+    <!-- NEDRE DEL: FYRA AVSKALADE HUVUDLÄNKAR + SIDFOT -->
+    <div class="shrink-0 border-t-[3px] border-[#12273E]">
       <main class="divide-y-[3px] divide-[#12273E]">
         <!-- 01. PROGRAM -->
         <a
           href="https://billetto.se/users/utopia-jazz"
           target="_blank"
           rel="noreferrer"
-          class="stage-row px-4 sm:px-8 py-5 sm:py-6 flex items-center justify-between gap-4 block"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
         >
-          <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
             PROGRAM
           </span>
           <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
-            <svg class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
               <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
             </svg>
           </span>
@@ -177,13 +177,13 @@
           href="https://book.easytable.com/book/?id=c5c76&lang=auto"
           target="_blank"
           rel="noreferrer"
-          class="stage-row px-4 sm:px-8 py-5 sm:py-6 flex items-center justify-between gap-4 block"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
         >
-          <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
             BOKA BORD
           </span>
           <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
-            <svg class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
               <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
             </svg>
           </span>
@@ -194,13 +194,30 @@
           href="https://utopiajazz.com/wp-content/uploads/2026/09/UtopiaMeny.260820-UTKAST-5.pdf"
           target="_blank"
           rel="noreferrer"
-          class="stage-row px-4 sm:px-8 py-5 sm:py-6 flex items-center justify-between gap-4 block"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
         >
-          <span class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em]">
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
             MENY
           </span>
           <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
-            <svg class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- 04. GALLERI -->
+        <a
+          href="https://utopiajazz.com/galleri"
+          target="_blank"
+          rel="noreferrer"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
+        >
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
+            GALLERI
+          </span>
+          <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
               <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
             </svg>
           </span>
@@ -208,15 +225,15 @@
       </main>
 
       <!-- SIDFOT: ÖPPETTIDER & KONTAKT -->
-      <footer class="border-t-[3px] border-[#12273E] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm sm:text-base font-medium tracking-[0.05em] uppercase">
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <footer class="border-t-[3px] border-[#12273E] px-3 sm:px-6 py-2 sm:py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3 text-xs sm:text-sm font-medium tracking-[0.04em] uppercase">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
           <span class="font-display text-[#991C1F] font-bold tracking-[0.08em]">ÖPPET</span>
           <span>TIS–TOR 17–23</span>
           <span>/</span>
           <span>FRE–LÖR 16–01</span>
         </div>
 
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
           <a href="tel:+46768941124" class="hover:text-[#991C1F] transition-colors">
             +46 76 894 11 24
           </a>
@@ -233,9 +250,6 @@
     </div>
 
   </div>
-
-</body>
-</html>
 
 </body>
 </html>
