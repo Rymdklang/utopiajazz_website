@@ -102,9 +102,6 @@
         <h1 class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-[0.04em] text-[#991C1F]">
           GALLERI
         </h1>
-        <span id="photo-count" class="text-xs sm:text-sm font-semibold tracking-[0.1em] uppercase text-[#12273E]">
-          [ 16 BILDER ]
-        </span>
       </div>
 
       <p class="text-xs sm:text-sm font-semibold tracking-[0.08em] uppercase">
@@ -213,26 +210,25 @@
     })();
 
     const GALLERY_IMAGES = [
-      { file: '1.jpg',  caption: 'SCENEN © MARTIN WALLÈN',       focus: '70% 35%' },
-      { file: '2.jpg',  caption: 'NEDERVÅNINGEN © SIXTEN MORITZ', focus: '52% 48%' },
-      { file: '3.jpg',  caption: 'SCENEN © SIXTEN MORITZ',        focus: '50% 42%' },
-      { file: '4.jpg',  caption: 'ÖVERVÅNINGEN © SIXTEN MORITZ',  focus: '55% 45%' },
-      { file: '5.jpg',  caption: 'SCENEN © MARTIN WALLÈN',        focus: '72% 45%' },
-      { file: '6.jpg',  caption: 'MERCH © SIXTEN MORITZ',         focus: '62% 52%' },
-      { file: '7.jpg',  caption: 'NEDERVÅNINGEN © SIXTEN MORITZ', focus: '45% 48%' },
-      { file: '8.jpg',  caption: 'SCENEN © SIXTEN MORITZ',        focus: '50% 25%' },
-      { file: '9.jpg',  caption: 'SCENEN © MARTIN WALLÈN',        focus: '55% 22%' },
-      { file: '10.jpg', caption: 'SCENEN © MARTIN WALLÈN',        focus: '60% 35%' },
-      { file: '11.jpg', caption: 'SCENEN © SIXTEN MORITZ',        focus: '48% 32%' },
-      { file: '12.jpg', caption: 'NEDERVÅNINGEN © MARTIN WALLÈN', focus: '52% 45%' },
-      { file: '13.jpg', caption: 'SCENEN © SIXTEN MORITZ',        focus: '48% 36%' },
-      { file: '14.jpg', caption: 'FRÅN GATAN © MARTIN WALLÈN',    focus: '36% 42%' },
-      { file: '15.jpg', caption: 'FLYGELN © MARTIN WALLÈN',       focus: '52% 52%' },
-      { file: '16.jpg', caption: 'SCENEN © SIXTEN MORITZ',        focus: '46% 32%' }
+      { file: '1.jpg',  title: 'SCENEN',        credit: '© MARTIN WALLÈN', focus: '70% 35%' },
+      { file: '2.jpg',  title: 'NEDERVÅNINGEN', credit: '© SIXTEN MORITZ', focus: '52% 48%' },
+      { file: '3.jpg',  title: 'SCENEN',        credit: '© SIXTEN MORITZ', focus: '50% 42%' },
+      { file: '4.jpg',  title: 'ÖVERVÅNINGEN',  credit: '© SIXTEN MORITZ', focus: '55% 45%' },
+      { file: '5.jpg',  title: 'SCENEN',        credit: '© MARTIN WALLÈN', focus: '72% 45%' },
+      { file: '6.jpg',  title: 'MERCH',         credit: '© SIXTEN MORITZ', focus: '62% 52%' },
+      { file: '7.jpg',  title: 'NEDERVÅNINGEN', credit: '© SIXTEN MORITZ', focus: '45% 48%' },
+      { file: '8.jpg',  title: 'SCENEN',        credit: '© SIXTEN MORITZ', focus: '50% 25%' },
+      { file: '9.jpg',  title: 'SCENEN',        credit: '© MARTIN WALLÈN', focus: '55% 22%' },
+      { file: '10.jpg', title: 'SCENEN',        credit: '© MARTIN WALLÈN', focus: '60% 35%' },
+      { file: '11.jpg', title: 'SCENEN',        credit: '© SIXTEN MORITZ', focus: '48% 32%' },
+      { file: '12.jpg', title: 'NEDERVÅNINGEN', credit: '© MARTIN WALLÈN', focus: '52% 45%' },
+      { file: '13.jpg', title: 'SCENEN',        credit: '© SIXTEN MORITZ', focus: '48% 36%' },
+      { file: '14.jpg', title: 'FRÅN GATAN',    credit: '© MARTIN WALLÈN', focus: '36% 42%' },
+      { file: '15.jpg', title: 'FLYGELN',       credit: '© MARTIN WALLÈN', focus: '52% 52%' },
+      { file: '16.jpg', title: 'SCENEN',        credit: '© SIXTEN MORITZ', focus: '46% 32%' }
     ];
 
     const wallEl = document.getElementById('photo-wall');
-    const countEl = document.getElementById('photo-count');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
@@ -262,29 +258,29 @@
     }
 
     function renderGallery() {
-      countEl.textContent = `[ ${padZero(GALLERY_IMAGES.length)} BILDER ]`;
       wallEl.innerHTML = '';
 
       GALLERY_IMAGES.forEach((item, index) => {
+        const fullCaption = `${item.title} ${item.credit}`;
         const card = document.createElement('button');
         card.type = 'button';
         card.className = 'photo-card h-full w-full text-left border-[3px] border-[#12273E] bg-[#F4F4ED] flex flex-col justify-between cursor-pointer focus:outline-none';
-        card.setAttribute('aria-label', `Visa bild ${index + 1}: ${item.caption}`);
+        card.setAttribute('aria-label', `Visa bild ${index + 1}: ${fullCaption}`);
 
         const imgWrapper = document.createElement('div');
         imgWrapper.className = 'flex-1 w-full aspect-[4/3] overflow-hidden bg-[#12273E]/10';
 
         const img = document.createElement('img');
         applyImageSources(img, item.file);
-        img.alt = item.caption;
+        img.alt = fullCaption;
         img.style.objectPosition = item.focus || '50% 45%';
         img.className = 'w-full h-full object-cover block';
 
         const metaBar = document.createElement('div');
         metaBar.className = 'shrink-0 border-t-[3px] border-[#12273E] px-3 py-2 flex items-center justify-between gap-2 text-xs sm:text-sm font-semibold tracking-[0.06em] uppercase bg-[#F4F4ED]';
         metaBar.innerHTML = `
-          <span class="text-[#991C1F] font-display font-bold shrink-0">[ ${padZero(index + 1)} ]</span>
-          <span class="truncate">${item.caption}</span>
+          <span class="text-[#991C1F] font-display font-bold shrink-0">${item.title}</span>
+          <span class="truncate">${item.credit}</span>
         `;
 
         imgWrapper.appendChild(img);
@@ -297,9 +293,10 @@
 
     function updateLightbox() {
       const item = GALLERY_IMAGES[currentIndex];
+      const fullCaption = `${item.title} ${item.credit}`;
       applyImageSources(lightboxImg, item.file);
-      lightboxImg.alt = item.caption;
-      lightboxCaption.textContent = item.caption;
+      lightboxImg.alt = fullCaption;
+      lightboxCaption.textContent = fullCaption;
       lightboxCounter.textContent = `[ ${padZero(currentIndex + 1)} / ${padZero(GALLERY_IMAGES.length)} ]`;
     }
 
