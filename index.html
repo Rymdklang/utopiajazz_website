@@ -72,4 +72,185 @@
 </head>
 <body class="h-[100dvh] min-h-0 overflow-hidden w-full flex flex-col justify-between selection:bg-[#991C1F] selection:text-[#F4F4ED]">
 
-  <!-- STILREN YTTRE AFFISCHRAM I BAKGRUND (#F4F4ED), OUTLINE/TEXT (#12273E) & ACCENT (#991C1
+  <!-- STILREN YTTRE AFFISCHRAM I BAKGRUND (#F4F4ED), OUTLINE/TEXT (#12273E) & ACCENT (#991C1F) -->
+  <div class="flex-1 min-h-0 flex flex-col justify-between m-2 sm:m-4 md:m-5 border-[3px] border-[#12273E] bg-[#F4F4ED]">
+
+    <!-- TOPPRAD: ADRESS & SOCIALA LÄNKAR -->
+    <header class="shrink-0 px-3 sm:px-6 py-2 sm:py-2.5 border-b-[3px] border-[#12273E] flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm tracking-[0.08em] uppercase font-semibold">
+      <a
+        href="https://maps.google.com/?q=Karl+Johansgatan+6,+Göteborg"
+        target="_blank"
+        rel="noreferrer"
+        class="hover:text-[#991C1F] transition-colors"
+      >
+        KARL JOHANSGATAN 6, GÖTEBORG
+      </a>
+
+      <nav class="flex items-center gap-4 sm:gap-6">
+        <a
+          href="https://www.instagram.com/utopiajazzgbg/"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-1 hover:text-[#991C1F] transition-colors"
+        >
+          <span>INSTAGRAM</span>
+          <svg class="w-3 h-3 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com/utopiajazzgbg/?locale=sv_SE"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-1 hover:text-[#991C1F] transition-colors"
+        >
+          <span>FACEBOOK</span>
+          <svg class="w-3 h-3 shrink-0" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <!-- MITTENDEL: UTOPIA LOGOTYP INRAMAD I AFFISCHKOMPOSITION -->
+    <section class="flex-1 min-h-0 px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-center overflow-hidden">
+      <div class="relative w-full max-w-3xl flex items-center justify-center">
+        <!-- Tunna, eleganta registreringslinjer i #991C1F som förankrar logotypen i affischen -->
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] mr-5"></div>
+
+        <div class="logo-stage relative flex items-center justify-center shrink-0">
+          <!-- Din uppladdade röda logotyp (utopiajazzlogosmall.png) -->
+          <img
+            src="./utopiajazzlogosmall.png"
+            alt="Utopia Jazz"
+            onerror="this.style.display='none'; document.getElementById('svg-logo-fallback').style.display='flex';"
+            class="h-[155px] sm:h-[225px] md:h-[265px] w-auto max-w-none object-contain select-none rotate-90"
+          />
+
+          <!-- Reserv-vektorlogotyp i #991C1F (visas här i förhandsvisningen) -->
+          <div id="svg-logo-fallback" style="display: none;" class="items-center justify-center">
+            <svg
+              viewBox="0 0 420 500"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-[155px] sm:h-[225px] md:h-[265px] w-auto select-none rotate-90"
+              aria-label="Utopia Jazz"
+            >
+              <g fill="#991C1F" font-family="'Oswald', Impact, sans-serif" font-weight="700" letter-spacing="-2">
+                <g transform="translate(188, 468) rotate(-90)">
+                  <text x="0" y="0" font-size="148">UTOPIA</text>
+                </g>
+                <g transform="translate(362, 478) rotate(-91.5)">
+                  <text x="0" y="0" font-size="142">JAZZ</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="hidden sm:block flex-1 h-[2px] bg-[#991C1F] ml-5"></div>
+      </div>
+    </section>
+
+    <!-- NEDRE DEL: FYRA AVSKALADE HUVUDLÄNKAR + SIDFOT -->
+    <div class="shrink-0 border-t-[3px] border-[#12273E]">
+      <main class="divide-y-[3px] divide-[#12273E]">
+        <!-- 01. PROGRAM & BILJETTER -->
+        <a
+          href="https://billetto.se/users/utopia-jazz"
+          target="_blank"
+          rel="noreferrer"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
+        >
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
+            PROGRAM &amp; BILJETTER
+          </span>
+          <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- 02. BOKA BORD -->
+        <a
+          href="https://book.easytable.com/book/?id=c5c76&lang=auto"
+          target="_blank"
+          rel="noreferrer"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
+        >
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
+            BOKA BORD
+          </span>
+          <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- 03. MENY -->
+        <a
+          href="https://utopiajazz.com/wp-content/uploads/2026/09/UtopiaMeny.260820-UTKAST-5.pdf"
+          target="_blank"
+          rel="noreferrer"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
+        >
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
+            MENY
+          </span>
+          <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- 04. GALLERI -->
+        <a
+          href="./galleri/"
+          class="stage-row px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-3 block"
+        >
+          <span class="font-display text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.04em] leading-none">
+            GALLERI
+          </span>
+          <span class="row-arrow text-[#991C1F] shrink-0" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+            </svg>
+          </span>
+        </a>
+      </main>
+
+      <!-- SIDFOT: ÖPPETTIDER & KONTAKT -->
+      <footer class="border-t-[3px] border-[#12273E] px-3 sm:px-6 py-2 sm:py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3 text-xs sm:text-sm font-medium tracking-[0.04em] uppercase">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <span class="font-display text-[#991C1F] font-bold tracking-[0.08em]">ÖPPET</span>
+          <span>TIS–TOR 17–23</span>
+          <span>/</span>
+          <span>FRE–LÖR 16–01</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <a href="tel:+46768941124" class="hover:text-[#991C1F] transition-colors">
+            +46 76 894 11 24
+          </a>
+          <span>•</span>
+          <a href="mailto:info@utopiajazz.com" class="hover:text-[#991C1F] transition-colors">
+            INFO@UTOPIAJAZZ.COM
+          </a>
+          <span>•</span>
+          <a href="mailto:anders@utopiajazz.com" class="hover:text-[#991C1F] transition-colors">
+            BOKA BAND: ANDERS@UTOPIAJAZZ.COM
+          </a>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+</body>
+</html>
+```[cite: 1]
+
+Säg bara till om du vill ändra något mer på startsidan eller gallerisidan!
